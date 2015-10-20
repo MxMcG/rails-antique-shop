@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
+  get 'items/index'
+
   root 'homepage#index'
   get 'homepage_admin/index' => 'homepage_admin#index'
-  get '/items/new' => 'homepage_admin#new'
-  get '/items/:id' => 'homepage_admin#show'
-  # get '/items/:id/edit' => 'homepage_admin#edit'
-  # post '/items/:id' => 'homepage_admin#edit'
-  post '/items' => 'homepage_admin#create'
-  delete '/items/:id' => 'homepage_admin#destroy'
-  # The priority is based upon order of creation: first created -> highest priority.
+  # get '/items/new' => 'homepage_admin#new'
+  # get '/items/:id' => 'homepage_admin#show'
+  # # get '/items/:id/edit' => 'homepage_admin#edit'
+  # # post '/items/:id' => 'homepage_admin#edit'
+  # post '/items' => 'homepage_admin#create'
+  # delete '/items/:id' => 'homepage_admin#destroy'
+  # # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
@@ -20,7 +22,7 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+     resources :items
 
   # Example resource route with options:
   #   resources :products do

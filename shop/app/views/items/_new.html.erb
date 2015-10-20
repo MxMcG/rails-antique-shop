@@ -1,0 +1,5 @@
+<%= form_for @item, :action => "post" do |f| %>
+
+  <%= render(:partial => 'items/form', :locals => {:f => f, :url => new_item_path})%>
+
+<% end %>
