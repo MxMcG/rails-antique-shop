@@ -18,8 +18,12 @@ class ItemsController < ApplicationController
     p params["item"]
     p "*" * 100
     @item = Item.new(item_params)
-    @item.save
-    redirect_to '/homepage_admin/index'
+    if @item.save
+
+      redirect_to '/homepage_admin/index'
+    else
+      render 'items/_new'
+    end
   end
 
   def edit
