@@ -15,12 +15,12 @@ class ItemsController < ApplicationController
   end
 
   def create
-    p params["item"]
-    p "*" * 100
+    # p params["item"]
+    # p "*" * 100
     @item = Item.new(item_params)
     if @item.save
-
-      redirect_to '/homepage_admin/index'
+      flash[:notice] = "Item created."
+      render '/homepage_admin/index'
     else
       render 'items/_new'
     end
@@ -33,11 +33,11 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-
     if @item.update(item_params)
+      flash[:notice] = "Item updated."
       redirect_to '/homepage_admin/index'
     else
-      render '/homepage_admin/_form'
+      render '/items/_form'
     end
   end
 
