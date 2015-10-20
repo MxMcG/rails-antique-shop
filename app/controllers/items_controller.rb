@@ -37,7 +37,7 @@ class ItemsController < ApplicationController
       flash[:notice] = "Item updated."
       redirect_to '/homepage_admin/index'
     else
-      render '/items/_form'
+      render '/items/_edit'
     end
   end
 
