@@ -1,0 +1,16 @@
+<h1>Ye Olde Shoppe</h1>
+<% @items.each do |item| %>
+  <div>
+    <a href="/items/<%= item.id %>"><strong><%= item.name %><br></strong></a>
+    <%= item.description %><br>
+    $<%= item.price %><br><br>
+    <a href="/items/<%= item.id %>/edit">EDIT</a><br>
+    <form action="/items/<%= item.id %>" method="post">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="DELETE">
+    </form><br>
+  </div>
+<% end %>
+<div>
+  <a href="/items/new">NEW</a><br>
+</div>
