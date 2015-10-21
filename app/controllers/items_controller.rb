@@ -1,50 +1,40 @@
 class ItemsController < ApplicationController
-  def index
-    @items = Item.all
-    render 'homepage_admin/index'
-  end
+  before_action :find_by_id, only: [:show, :edit, :update, :destroy]
 
   def show
-    @item = Item.find(params[:id])
-    render 'items/item'
   end
 
   def new
     @item = Item.new
-    render 'items/_new'
+    render '_form'
   end
 
   def create
-    # p params["item"]
-    # p "*" * 100
     @item = Item.new(item_params)
     if @item.save
       flash[:notice] = "Item created."
-      render '/homepage_admin/index'
+      redirect_to homepage_admin_index_path
     else
-      render 'items/_new'
+      render '_form'
     end
   end
 
   def edit
-    @item = Item.find(params[:id])
-    render 'items/_edit'
+    render '_form'
   end
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(item_params)
       flash[:notice] = "Item updated."
-      redirect_to '/homepage_admin/index'
+      redirect_to homepage_admin_index_path
     else
-      render '/items/_edit'
+      render '_form'
     end
   end
 
   def destroy
-    @item = Item.find(params[:id])
     @item.destroy
-    redirect_to items_path
+    redirect_to homepage_admin_index_path
   end
 
   private
@@ -52,4 +42,7 @@ class ItemsController < ApplicationController
       params.require(:item).permit(:name, :description, :price)
     end
 
+    def find_by_id
+      @item = Item.find(params[:id])
+    end
 end

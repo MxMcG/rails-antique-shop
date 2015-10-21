@@ -1,16 +1,14 @@
 <h1>Ye Olde Shoppe</h1>
 <% @items.each do |item| %>
-  <div>
-    <a href="/items/<%= item.id %>"><strong><%= item.name %><br></strong></a>
+  <div><br>
+    <%= link_to item.name, item_path(item) %><br>
     <%= item.description %><br>
     $<%= item.price %><br><br>
-    <a href="/items/<%= item.id %>/edit">EDIT</a><br>
-    <form action="/items/<%= item.id %>" method="post">
-      <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="DELETE">
-    </form><br>
+    <%= link_to "Edit", edit_item_path(item) %>
+    <%= link_to "Delete", item_path(item), :method => 'delete' %>
+    <br>
   </div>
 <% end %>
 <div>
-  <a href="/items/new">NEW</a><br>
+  <br><a href="/items/new">NEW</a><br>
 </div>
