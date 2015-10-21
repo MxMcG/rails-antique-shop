@@ -31,12 +31,34 @@ describe ItemsController do
 
   describe '#edit' do
     it 'should go to the edit page' do
-      get :edit
+      item = Item.create(name: "lksj", description: "dlkwjee", price: 2)
+      get :edit, { id: item.id }
       expect(response.status).to eq 200
     end
   end
 
-  # describe '#update' do
-  # end
+  describe '#update' do
+    it 'should update item in database' do
+      item = Item.create(name: "lksj", description: "dlkwjee", price: 2)
+      old_price = item.price
+      put :update, id: item.id, item: { name: item.name, item: item.description, price: 5 }
+      expect(item.price).not_to eq(old_price)
+    end
+  end
+
+  describe '#destroy' do
+    item = Item.create(name: "lksj", description: "dlkwjee", price: 2)
+    it 'decrements item count in database' do
+      item_id = item.id
+      expect {
+        delete :destroy, id: item_id
+      }.to change { Item.count }.by(-1)
+    end
+    it 'redirects to the root path' do
+      item_id = item.id
+      delete :destroy, id: item_id
+      expect(response.status).to eq(302)
+    end
+  end
 
 end

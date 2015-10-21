@@ -21,6 +21,7 @@ class ItemsController < ApplicationController
 
   def edit
     render '_form'
+    p "*" * 100
   end
 
   def update
