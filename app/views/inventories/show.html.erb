@@ -1,0 +1,9 @@
+<h1>Ye Olde Shoppe</h1>
+  <div>
+    <strong><%= @inventory.name %><br></strong>
+    <%= @inventory.description %><br>
+    $<%= @inventory.price %><br><br>
+    <%= link_to "Edit", edit_inventory_path %>
+    <%= link_to "Delete", inventories_path, :method => 'delete' %>
+    <%= link_to "Back", inventories_path %>
+  </div>

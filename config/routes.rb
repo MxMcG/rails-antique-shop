@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'items/index'
 
-  root 'homepage#index'
-  get 'homepage_admin/index' => 'homepage_admin#index'
+
+  root 'products#index'
+
   # get '/items/new' => 'homepage_admin#new'
   # get '/items/:id' => 'homepage_admin#show'
   # # get '/items/:id/edit' => 'homepage_admin#edit'
@@ -22,7 +22,8 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-     resources :items
+     resources :inventories
+     resources :products
 
   # Example resource route with options:
   #   resources :products do

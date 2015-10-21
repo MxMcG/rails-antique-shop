@@ -1,0 +1,14 @@
+<h1>Ye Olde Shoppe</h1>
+<% @inventories.each do |inventory| %>
+  <div><br>
+    <%= link_to inventory.name, inventory_path(inventory) %><br>
+    <%= inventory.description %><br>
+    $<%= inventory.price %><br><br>
+    <%= link_to "Edit", edit_inventory_path(inventory) %>
+    <%= link_to "Delete", inventory_path(inventory), :method => 'delete' %>
+    <br>
+  </div>
+<% end %>
+<div>
+  <%= link_to "Add new", new_inventory_path %><br>
+</div>

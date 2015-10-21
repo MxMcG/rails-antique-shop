@@ -1,12 +1,12 @@
-<%= form_for @item do |f| %>
+<%= form_for @inventory, url: url, method: method do |f| %>
 
-<% if @item.errors.any? %>
+<% if @inventory.errors.any? %>
   <div id="error_explanation">
     <h2>
-      <%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:
+      <%= pluralize(@inventory.errors.count, "error") %> prohibited this inventory from being saved:
     </h2>
     <ul>
-      <% @item.errors.full_messages.each do |msg| %>
+      <% @inventory.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>
@@ -25,11 +25,12 @@
 
 <p>
   <%= f.label :price %><br>
-  <%= f.number_field :price %>
+  <%= f.number_field :price, step: 0.01 %>
 </p>
 
 <p>
   <%= f.submit %>
 </p>
+<%= link_to "Back", inventories_path %>
 
 <% end %>

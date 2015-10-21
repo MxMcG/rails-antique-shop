@@ -1,0 +1,10 @@
+<h1>Welcome to our shop</h1>
+<% @products.each do |product| %>
+  <div><br>
+    <%= link_to product.name, product_path(product) %><br>
+    <%= product.description %><br>
+    $<%= product.price %><br><br>
+  </div>
+<% end %>
+<%= link_to "admin view", inventories_path %>
+

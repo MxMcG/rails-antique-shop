@@ -7,6 +7,7 @@ describe ItemsController do
       get :show, id: it.id
       expect(assigns(:item)).to be_an Item
     end
+    #test that the right template got rendered
   end
 
   describe '#new' do
