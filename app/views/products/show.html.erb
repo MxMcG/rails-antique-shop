@@ -1,7 +1,12 @@
-<h1>Ye Olde Shoppe</h1>
-  <div>
-    <strong><%= @product.name %><br></strong>
-    <%= @product.description %><br>
-    $<%= @product.price %><br><br>
-    <%= link_to "Back", products_path %>
+  <% image_urls = ["http://cdn.shopify.com/s/files/1/0237/4165/products/216910_IND016_large.jpg?v=1439917563", "http://cdn.shopify.com/s/files/1/0237/4165/products/224946_-_3_Drawers_-_Teal2_13_large.jpg?v=1414607959", "http://cdn.shopify.com/s/files/1/0237/4165/products/241851-H018_large.JPG?v=1441747511", "http://cdn.shopify.com/s/files/1/0237/4165/products/223307_4d04dad0-c27b-4a0d-9514-915009a75caf_large.JPG?v=1439312856"] %>
+
+<div class='detail'>
+  <%= image_tag(image_urls.sample, width: "50%") %>
+  <div class='content'>
+  <div class='content-title'><p><%= @product.name %></p></div>
+  <p><%= @product.description %></p>
+  <p>$<%= @product.price %></p><br>
+  <%= button_tag "Buy" %><br>
+  <%= link_to "Back", products_path %>
   </div>
+</div>
