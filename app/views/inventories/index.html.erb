@@ -1,4 +1,5 @@
 <h1>Ye Olde Shoppe</h1>
+<%= link_to "Log out", destroy_admin_session %>
 <% @inventories.each do |inventory| %>
   <div><br>
     <%= link_to inventory.name, inventory_path(inventory) %><br>

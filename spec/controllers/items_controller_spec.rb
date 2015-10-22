@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe ItemsController do
+describe InventoriesController do
   describe '#show' do
     let(:it) { Item.create(name: 'asdf', description: 'fddfdd', price: 2) }
     it "should show an individual item" do

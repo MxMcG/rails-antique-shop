@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
 
+  devise_for :admins
+  devise_for :users
   root 'products#index'
+  get '/admins/restricted' => 'inventories#restricted'
 
   # get '/items/new' => 'homepage_admin#new'
   # get '/items/:id' => 'homepage_admin#show'

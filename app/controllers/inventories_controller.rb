@@ -1,5 +1,6 @@
 class InventoriesController < ApplicationController
   before_action :find_by_id, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!
 
   def index
     @inventories = Item.all
@@ -40,6 +41,10 @@ class InventoriesController < ApplicationController
     @inventory.destroy
     redirect_to inventories_path
   end
+  def restricted
+    redirect_to admins_restricted
+  end
+
 
   private
     def inventory_params
