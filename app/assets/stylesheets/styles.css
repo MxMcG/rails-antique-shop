@@ -12,6 +12,16 @@ a {
   text-decoration: none;
 }
 
+.alert {
+  text-align: center;
+  color: red;
+}
+
+.notice {
+  text-align: center;
+  color: #006600;
+}
+
 #nav-container {
   background-image: url("https://images.unsplash.com/42/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg?q=80&fm=jpg&w=1080&fit=max&s=d01f08468d58bebcef4b9e7914cf4e9e");
   background-size: 100% auto;
@@ -66,11 +76,6 @@ a {
   position: absolute;
   top: 2em;
   right: 2em;
-}
-
-.notice, .alert {
-  text-align: center;
-  color: red;
 }
 
 .user-account-links a:first-child {
