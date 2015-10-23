@@ -4,12 +4,13 @@
 <div class="section group" id="products-grouping">
   <% @products.each do |product| %>
   <div class="col span_1_of_3 products-item">
-  <div class='appended-description'></div>
     <%= link_to product_path(product) do %>
       <%= image_tag(image_urls.sample, width: "100%") %>
-      <div class="content-title"><%= product.name %></div><br>
-      <%= product.description %><br>
-      $<%= product.price %><br><br>
+      <div class='content-area'>
+        <h3><%= product.name %></h3>
+        <p><%= product.description %></p>
+        <span>$<%= product.price %></span>
+      </div>
     <% end %>
   </div>
 <% end %>

@@ -3,7 +3,7 @@
 <div class='detail'>
   <%= image_tag(image_urls.sample, width: "50%") %>
   <div class='content'>
-  <div class='content-title'><p><%= @product.name %></p></div>
+  <h3><%= @product.name %></h3>
   <p><%= @product.description %></p>
   <p>$<%= @product.price %></p><br>
   <%= button_tag "Buy" %><br>
