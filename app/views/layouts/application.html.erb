@@ -27,8 +27,7 @@
       <!-- Page header -->
       <div id="page-title"><h1><%= link_to "Bouma's Antique Shoppe", root_path %></h1></div>
       <!-- Devise alerts -->
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+
       <!-- direct to admin page -->
       <%= link_to "Admin", inventories_path, { :id=>"admin-page-link" } %>
       <!-- User -->
@@ -44,9 +43,13 @@
   <% end %>
   <!-- Admin  -->
   <% if admin_signed_in? %>
+  <div class='logout-account-links'>
     <%= link_to "Admin log out", destroy_admin_session_path, method: "delete" %>
+  </div>
   <% end %>
 </div>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 <%= yield %>
 </body>
 </html>
