@@ -1,11 +1,30 @@
 require 'rails_helper'
 
 describe InventoriesController do
+  let(:item) { FactoryGirl.create(:item) }
+  let(:attributes) { FactoryGirl.attributes_for :article}
+  describe 'get #index' do
+    login_admin
+    before (:each) do
+      get :index
+    end
+    it 'should respond with a 200' do
+      expect(response.status).to eq(200)
+    end
+    # it "assigns the inventories instance variable" do
+    #   expect(assign(:items)).to be_a(ActiveRecord::Relation)
+    # end
+    it "renders the index template" do
+      expect(response).to render_template(:index)
+    end
+  end
   describe '#show' do
-    let(:it) { Item.create(name: 'asdf', description: 'fddfdd', price: 2) }
+      login_admin
+      before (:each) do
+        get :show, id: item.id
+      end
     it "should show an individual item" do
-      get :show, id: it.id
-      expect(assigns(:item)).to be_an Item
+    expect(assigns(:item)).to be_an(Item)
     end
     #test that the right template got rendered
   end
