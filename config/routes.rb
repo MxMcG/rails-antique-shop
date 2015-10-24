@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
 
-
   devise_for :admins
   devise_for :users
   root 'products#index'
+  get '/cart' => 'cart_items#index'
   get '/admins/restricted' => 'inventories#restricted'
+
+  resources :inventories
+  resources :products do
+    resources :cart_items
+  end
 
   # get '/items/new' => 'homepage_admin#new'
   # get '/items/:id' => 'homepage_admin#show'
@@ -25,8 +30,6 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-     resources :inventories
-     resources :products
 
   # Example resource route with options:
   #   resources :products do

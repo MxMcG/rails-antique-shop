@@ -2,6 +2,17 @@ class ProductsController < ApplicationController
   before_action :find_by_id, only: [:show, :edit, :update, :destroy]
 
   def index
+    if user_signed_in?
+      unless session[:cart_id]
+        if Cart.find_by(user_id: current_user.id) != nil
+          this_cart = Cart.find_by(user_id: current_user.id)
+          session[:cart_id] = this_cart.id
+        else
+          this_cart = Cart.create(user_id: current_user.id)
+          session[:cart_id] = this_cart.id
+        end
+      end
+    end
     @products = Item.all
   end
 

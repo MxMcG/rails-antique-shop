@@ -181,6 +181,9 @@ a {
   margin: 2em 5em 0 5em;
 }
 
+#cart-container {
+  margin: 2em 5em 0 5em;
+}
 #inventory-container h1{
   text-align: center;
 }
@@ -232,3 +235,18 @@ a {
     position: relative;
   }
 }
+
+/*CART ITEMS*/
+
+#cart-items li {
+  list-style: none;
+}
+
+
+
+
+
+
+
+
+

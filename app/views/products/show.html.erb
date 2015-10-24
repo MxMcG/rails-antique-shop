@@ -6,7 +6,7 @@
   <h3><%= @product.name %></h3>
   <p><%= @product.description %></p>
   <p>$<%= @product.price %></p><br>
-  <%= button_tag "Buy" %><br>
+  <%= button_to "Buy", product_cart_items_path(@product) %><br>
   <%= link_to "Back", products_path %>
   </div>
 </div>
