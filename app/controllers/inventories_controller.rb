@@ -7,7 +7,10 @@ class InventoriesController < ApplicationController
   end
 
   def show
+  end
 
+  def new
+    @inventory = Item.new
     render :form, locals: {url: inventories_path, method: 'post'}
   end
 
@@ -38,10 +41,10 @@ class InventoriesController < ApplicationController
     @inventory.destroy
     redirect_to inventories_path
   end
-
   def restricted
     redirect_to admins_restricted
   end
+
 
   private
     def inventory_params

@@ -60,20 +60,70 @@
         1,
         null
       ],
-      "/Users/max/Desktop/tech_portfolio/rails-online-shop-challenge/app/models/cart_item.rb": [
+      "/Users/max/Desktop/tech_portfolio/rails-online-shop-challenge/app/controllers/inventories_controller.rb": [
         1,
+        1,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        0,
+        null,
         null,
         1,
         1,
         null,
         null
       ],
-      "/Users/max/Desktop/tech_portfolio/rails-online-shop-challenge/app/models/cart.rb": [
+      "/Users/max/Desktop/tech_portfolio/rails-online-shop-challenge/app/controllers/application_controller.rb": [
         1,
         null,
-        1,
-        1,
         null,
+        1,
         null
       ],
       "/Users/max/Desktop/tech_portfolio/rails-online-shop-challenge/app/models/item.rb": [
@@ -88,6 +138,6 @@
         null
       ]
     },
-    "timestamp": 1445725545
+    "timestamp": 1445807175
   }
 }
