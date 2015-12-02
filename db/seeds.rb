@@ -1,0 +1,16 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+#
+# Examples:
+#
+#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   Mayor.create(name: 'Emanuel', city: cities.first)
+5.times do |i|
+Item.create(name: "Mirror", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed velit mauris, luctus nec arcu non, efficitur dignissim urna. Donec convallis luctus risus, aliquam feugiat quam elementum porta. Sed ultricies, felis vitae pretium accumsan, orci justo gravida neque, at aliquam sem augue eu nisl. Morbi aliquet est vitae justo placerat lacinia. Nunc vel molestie enim. Quisque vehicula, diam et suscipit iaculis, nisi tellus volutpat sem, in tristique ipsum metus quis eros. Integer ultrices pulvinar augue vitae cursus. Mauris pellentesque lorem ac nisl rutrum, accumsan commodo dolor lobortis. Sed orci metus, consequat et commodo vitae, vulputate vel nunc.", price: 50.00)
+Item.create(name: "Dresser", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed velit mauris, luctus nec arcu non, efficitur dignissim urna. Donec convallis luctus risus, aliquam feugiat quam elementum porta. Sed ultricies, felis vitae pretium accumsan, orci justo gravida neque, at aliquam sem augue eu nisl. Morbi aliquet est vitae justo placerat lacinia. Nunc vel molestie enim. Quisque vehicula, diam et suscipit iaculis, nisi tellus volutpat sem, in tristique ipsum metus quis eros. Integer ultrices pulvinar augue vitae cursus. Mauris pellentesque lorem ac nisl rutrum, accumsan commodo dolor lobortis. Sed orci metus, consequat et commodo vitae, vulputate vel nunc.", price: 20.00)
+Item.create(name: "Book shelf", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed velit mauris, luctus nec arcu non, efficitur dignissim urna. Donec convallis luctus risus, aliquam feugiat quam elementum porta. Sed ultricies, felis vitae pretium accumsan, orci justo gravida neque, at aliquam sem augue eu nisl. Morbi aliquet est vitae justo placerat lacinia. Nunc vel molestie enim. Quisque vehicula, diam et suscipit iaculis, nisi tellus volutpat sem, in tristique ipsum metus quis eros. Integer ultrices pulvinar augue vitae cursus. Mauris pellentesque lorem ac nisl rutrum, accumsan commodo dolor lobortis. Sed orci metus, consequat et commodo vitae, vulputate vel nunc.", price: 60.00)
+Item.create(name: "Clock", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed velit mauris, luctus nec arcu non, efficitur dignissim urna. Donec convallis luctus risus, aliquam feugiat quam elementum porta. Sed ultricies, felis vitae pretium accumsan, orci justo gravida neque, at aliquam sem augue eu nisl. Morbi aliquet est vitae justo placerat lacinia. Nunc vel molestie enim. Quisque vehicula, diam et suscipit iaculis, nisi tellus volutpat sem, in tristique ipsum metus quis eros. Integer ultrices pulvinar augue vitae cursus. Mauris pellentesque lorem ac nisl rutrum, accumsan commodo dolor lobortis. Sed orci metus, consequat et commodo vitae, vulputate vel nunc.", price: 45.00)
+end
+
+Admin.create(email: "admin@admin.com", encrypted_password: "password")
+User.create(email: "user@user.com", encrypted_password: "password")

@@ -1,0 +1,20 @@
+<div id="inventory-container">
+  <h1>Current Inventory</h1>
+
+    <%= link_to new_inventory_path do %>
+    <span id="add-inventory"> Add inventory</span>
+    <% end %>
+  <% @inventories.each do |inventory| %>
+    <div><br>
+      <div class="content-title"><%= link_to "Item name: " +inventory.name, inventory_path(inventory) %></div><br>
+      Item description: <%= inventory.description %><br>
+      Item price: $<%= inventory.price %><br><br>
+      <div id='modify-inventory-buttons'>
+        <%= link_to "Edit", edit_inventory_path(inventory) %>
+        <%= link_to "Delete", inventory_path(inventory), :method => 'delete' %>
+      </div>
+      <br>
+    </div>
+    <hr>
+  <% end %>
+</div>

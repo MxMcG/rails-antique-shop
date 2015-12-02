@@ -1,0 +1,11 @@
+<% image_urls = ["http://cdn.shopify.com/s/files/1/0237/4165/products/216910_IND016_large.jpg?v=1439917563", "http://cdn.shopify.com/s/files/1/0237/4165/products/224946_-_3_Drawers_-_Teal2_13_large.jpg?v=1414607959", "http://cdn.shopify.com/s/files/1/0237/4165/products/241851-H018_large.JPG?v=1441747511", "http://cdn.shopify.com/s/files/1/0237/4165/products/223307_4d04dad0-c27b-4a0d-9514-915009a75caf_large.JPG?v=1439312856"] %>
+
+
+  <div class='detail'>
+    <div class='content-title'><%= @inventory.name %></div><br>
+    <%= @inventory.description %><br>
+    $<%= @inventory.price %><br><br>
+    <%= link_to "Edit", edit_inventory_path %>
+    <%= link_to "Delete", inventories_path, :method => 'delete' %>
+    <%= link_to "Back", inventories_path %>
+  </div>

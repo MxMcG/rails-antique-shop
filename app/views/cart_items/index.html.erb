@@ -1,0 +1,17 @@
+<div id="cart-container">
+  <h1><%= current_user.email %>'s Cart</h1>
+<% price_array = [] %>
+
+<ul id="cart-items">
+  <% @cart_items.each do |cart_item| %>
+  <% price_array << cart_item.item.price %>
+    <li><%= cart_item.item.name %></li>
+    <li>$<%= cart_item.item.price %></li>
+    <%= button_to "Delete", product_cart_item_path(cart_item.item, cart_item), :method => 'delete', :remote => true, id: cart_item.item.id %>
+    <hr>
+  <% end %>
+</ul>
+
+<h2>Cart Total: $<%= price_array.reduce(&:+) %> <%= button_to "Purchase" %></h2>
+
+</div>

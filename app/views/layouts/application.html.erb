@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shop</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css?family=Tangerine', 'https://fonts.googleapis.com/css?family=Lato'%>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <div id="nav-container">
+      <!-- Nav bar -->
+      <div class="section group" id="product-categories">
+        <div class="col span_1_of_4 category">
+          <a href="#">About</a>
+        </div>
+        <div class="col span_1_of_4 category">
+          <a href="#">Contact</a>
+        </div>
+        <div class="col span_1_of_4 category">
+          <a href="#">FAQ</a>
+        </div>
+        <div class="col span_1_of_4 category">
+          <a href="#">Cheap</a>
+        </div>
+      </div>
+      <!-- Page header -->
+      <div id="page-title"><h1><%= link_to "Bouma's Antique Shoppe", root_path %></h1></div>
+      <!-- Devise alerts -->
+
+      <!-- direct to admin page -->
+      <%= link_to "Admin", inventories_path, { :id=>"admin-page-link" } %>
+      <!-- User -->
+      <% if user_signed_in? %>
+      <div class='user-account-links'>
+        <%= link_to "User log out", destroy_user_session_path, method: "delete" %>
+      </div>
+      <% else %>
+      <div class='user-account-links'>
+        <%= link_to "User log in", new_user_session_path %>
+        <%= link_to "User sign up", new_user_registration_path %>
+      </div>
+  <% end %>
+  <!-- Admin  -->
+  <% if admin_signed_in? %>
+  <div class='logout-account-links'>
+    <%= link_to "Admin log out", destroy_admin_session_path, method: "delete" %>
+  </div>
+  <% end %>
+</div>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<%= yield %>
+</body>
+</html>

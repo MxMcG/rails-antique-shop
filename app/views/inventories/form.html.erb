@@ -1,0 +1,38 @@
+<div class="form-alignment">
+  <%= form_for @inventory, url: url, method: method do |f| %>
+
+  <% if @inventory.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@inventory.errors.count, "error") %> prohibited this inventory from being saved:
+      </h2>
+      <ul>
+        <% @inventory.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.label :price %><br>
+    <%= f.number_field :price, step: 0.01 %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+  <%= link_to "Back", inventories_path %>
+
+  <% end %>
+</div>
