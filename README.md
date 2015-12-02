@@ -1,3 +1,4 @@
+
 ## Ye Olde Online Shoppe
 
 
@@ -28,3 +29,7 @@ You've consulted with the "senior engineer", and based on the consultation have 
 The senior engineer also tells you that you'll need to create our new Rails project with a Postgres database instead of the default SQLite3 database, because we won't be able to deploy a Rails app with a SQLite database to Heroku.
 
 Go Build! <3
+=======
+# rails-antique-shop
+Basic antique store built as a Dev Bootcamp project with one partner within two period. Built cart functionality. First project built with Rails framework. Currently inactive project.
+
